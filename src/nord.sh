@@ -27,34 +27,39 @@ append_profile_uuid_to_list() {
 # @since 0.2.0
 apply() {
   local \
-    nord0="#2E3440" \
-    nord1="#3B4252" \
-    nord3="#4C566A" \
-    nord4="#D8DEE9" \
-    nord5="#E5E9F0" \
-    nord6="#ECEFF4" \
-    nord7="#8FBCBB" \
-    nord8="#88C0D0" \
-    nord9="#81A1C1" \
-    nord11="#BF616A" \
-    nord13="#EBCB8B" \
-    nord14="#A3BE8C" \
-    nord15="#B48EAD"
+    color0="#282A36" \
+    color1="#D8DEE9" \
+    palette0="#3B4252" \
+    palette8="#4C566A" \
+    palette1="#FF4E4E" \
+    palette9="#FF6868" \
+    palette2="#10B981" \
+    palette10="#12D091" \
+    palette3="#E5E510" \
+    palette11="#F5F543" \
+    palette4="#2980b9" \
+    palette12="#2e8ece" \
+    palette5="#D946EF" \
+    palette13="#E879F9" \
+    palette6="#06B6D4" \
+    palette14="#07CBED" \
+    palette7="#ECF0F1" \
+    palette15="#FBFCFC"
   local \
-    nord0_rgb="rgb(46,52,64)"
-    nord1_rgb="rgb(59,66,82)"
-    nord4_rgb="rgb(216,222,233)"
-    nord8_rgb="rgb(136,192,208)"
+    color0_rgb="rgb(40,42,54)"
+    palette0_rgb="rgb(59,66,82)"
+    color1_rgb="rgb(216,222,233)"
+    palette8_rgb="rgb(76,86,106)"
 
-  _write palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
-  log 4 "Applied Nord color palette"
+  _write palette "['$palette0', '$palette1', '$palette2', '$palette3', '$palette4', '$palette5', '$palette6', '$palette7', '$palette8', '$palette9', '$palette10', '$palette11', '$palette12', '$palette13', '$palette14', '$palette15']"
+  log 4 "Applied Unioji color palette"
 
-  _write background-color "'$nord0'"
-  _write foreground-color "'$nord4'"
+  _write background-color "'$color0'"
+  _write foreground-color "'$color1'"
   _write use-transparent-background "false"
   log 4 "Applied background- and foreground colors"
 
-  _write bold-color "'$nord4'"
+  _write bold-color "'$color1'"
   _write bold-color-same-as-fg "true"
   log 4 "Applied bold color and configuration"
 
@@ -64,13 +69,13 @@ apply() {
   log 4 "Applied system theme compability configuration"
 
   _write cursor-colors-set "true"
-  _write cursor-foreground-color "'$nord1_rgb'"
-  _write cursor-background-color "'$nord4_rgb'"
+  _write cursor-foreground-color "'$palette0_rgb'"
+  _write cursor-background-color "'$color1_rgb'"
   log 4 "Applied cursor colors and configuration"
 
   _write highlight-colors-set "true"
-  _write highlight-foreground-color "'$nord0_rgb'"
-  _write highlight-background-color "'$nord8_rgb'"
+  _write highlight-foreground-color "'$color1_rgb'"
+  _write highlight-background-color "'$palette8_rgb'"
   log 4 "Applied highlight colors and configuration"
 
   _write "$NORD_GNOME_TERMINAL_VERSION_DCONF_KEY" "'$NORD_GNOME_TERMINAL_VERSION'"
@@ -363,7 +368,7 @@ _ctb_warning="\e[1;33m"
 NORD_GNOME_TERMINAL_SCRIPT_OPTS=$(getopt -o hl:p: --long help,loglevel:,profile: -n 'nord.sh' -- "$@")
 NORD_GNOME_TERMINAL_VERSION=0.1.0
 NORD_GNOME_TERMINAL_VERSION_DCONF_KEY=nord-gnome-terminal-version
-NORD_PROFILE_VISIBLE_NAME="Nord"
+NORD_PROFILE_VISIBLE_NAME="Unioji"
 log_level=2
 
 # List of required executable dependencies
@@ -395,7 +400,7 @@ while true; do
 done
 
 if validate_dependencies DEPENDENCIES[@]; then
-  
+
   if ! check_migrated_version_comp; then
     log 0 "The installed GNOME Terminal version '$gnome_terminal_version' is not compatible with the required (dconf migrated) version >= 3.8!"
     exit 1
