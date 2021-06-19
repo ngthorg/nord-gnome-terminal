@@ -28,25 +28,25 @@ append_profile_uuid_to_list() {
 apply() {
   local \
     color0="#282A36" \
-    color1="#D8DEE9" \
+    color1="#FFFFFF" \
     palette0="#3B4252" \
-    palette8="#4C566A" \
-    palette1="#FF4E4E" \
-    palette9="#FF6868" \
-    palette2="#10B981" \
-    palette10="#12D091" \
-    palette3="#E5E510" \
-    palette11="#F5F543" \
-    palette4="#2980b9" \
-    palette12="#2e8ece" \
-    palette5="#D946EF" \
-    palette13="#E879F9" \
-    palette6="#06B6D4" \
-    palette14="#07CBED" \
-    palette7="#ECF0F1" \
-    palette15="#FBFCFC"
+    palette8="#626774" \
+    palette1="#FB7DA7" \
+    palette9="#FB7DA7" \
+    palette2="#76C5A4" \
+    palette10="#76C5A4" \
+    palette3="#E3CF65" \
+    palette11="#E3CF65" \
+    palette4="#81A1C1" \
+    palette12="#81A1C1" \
+    palette5="#9562D6" \
+    palette13="#9562D6" \
+    palette6="#51C7DA" \
+    palette14="#51C7DA" \
+    palette7="#E5E5E5" \
+    palette15="#E5E5E5"
   local \
-    color0_rgb="rgb(40,42,54)"
+    color0_rgb="rgb(40, 44, 55)"
     palette0_rgb="rgb(59,66,82)"
     color1_rgb="rgb(216,222,233)"
     palette8_rgb="rgb(76,86,106)"
@@ -56,7 +56,7 @@ apply() {
 
   _write background-color "'$color0'"
   _write foreground-color "'$color1'"
-  _write use-transparent-background "false"
+  _write use-transparent-background "true"
   log 4 "Applied background- and foreground colors"
 
   _write bold-color "'$color1'"
@@ -68,12 +68,12 @@ apply() {
   _write use-theme-transparency "false"
   log 4 "Applied system theme compability configuration"
 
-  _write cursor-colors-set "true"
+  _write cursor-colors-set "false"
   _write cursor-foreground-color "'$palette0_rgb'"
   _write cursor-background-color "'$color1_rgb'"
   log 4 "Applied cursor colors and configuration"
 
-  _write highlight-colors-set "true"
+  _write highlight-colors-set "false"
   _write highlight-foreground-color "'$color1_rgb'"
   _write highlight-background-color "'$palette8_rgb'"
   log 4 "Applied highlight colors and configuration"
